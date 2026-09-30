@@ -1,0 +1,14 @@
+import logging
+from include.packet_filter import PacketFilter
+from include.ring_buffer import RingBuffer
+from include.sliding_window import SlidingWindow
+
+logging.basicConfig(level=logging.INFO)
+
+if __name__ == '__main__':
+    logging.info('Starting Zero-copy Userspace Packet Filter')
+    packet_filter = PacketFilter()
+    ring_buffer = RingBuffer()
+    sliding_window = SlidingWindow()
+    packet_filter.start(ring_buffer, sliding_window)
+    logging.info('Zero-copy Userspace Packet Filter started')

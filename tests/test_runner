@@ -1,0 +1,10 @@
+import unittest
+from src.main import main
+
+class TestRunner(unittest.TestCase):
+    def test_main_function(self):
+        result = main()
+        self.assertEqual(result, 0)
+
+if __name__ == '__main__':
+    unittest.main()
